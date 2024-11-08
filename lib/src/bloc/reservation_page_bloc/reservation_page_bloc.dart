@@ -10,7 +10,8 @@ part 'reservation_page_bloc.freezed.dart';
 class ReservationPageBloc
     extends Bloc<ReservationPageEvent, ReservationPageState> {
   ReservationPageBloc({required Reservation reservation})
-      : super(ReservationPageState.initial(reservation: reservation)) {
+      : super(ReservationPageState.initial(
+            reservation: reservation, isValid: false)) {
     on<ReservationPageEvent>((event, emit) => event.when(
         phoneChanged: (value) => emit((state as Initial)
             .copyWith(phone: PhoneNumberInput.pure(value: value))),

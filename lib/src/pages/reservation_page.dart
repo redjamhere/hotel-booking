@@ -21,9 +21,12 @@ class ReservationPage extends StatelessWidget {
       listener: (context, state) {
         switch (state) {
           case Initial(isValid: final isValid, reservation: final reservation):
-            if (isValid)
+            print(isValid);
+            if (isValid) {
               context.push(
-                  '/${reservation.hotel.id}/${reservation.room.name}/reservaton/success');
+                  '/${reservation.hotel.id}/${reservation.room.name}/reservation/success');
+            }
+
             break;
         }
       },
